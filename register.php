@@ -8,6 +8,8 @@
 
 	<script>
 		$(document).ready(function(){
+			$('#feedback').load('check/c_email.php').show();
+
 			$('#email').keyup(function() {
 				var email = $(this).val();
 				$.ajax({
@@ -29,15 +31,13 @@
 			<tr>
 				<td>Nama Lengkap</td>
 				<td>
-					<input type="text" name="nama_lengkap" id="nama_lengkap" placeholder="Nama Lengkap">
-				</td>
+					<input type="text" name="nama_lengkap" id="nama_lengkap" placeholder="Nama Lengkap">				</td>
 			</tr>
 			<tr>
 				<td>Email</td>
 				<td>
 					<input type="text" name="email" id="email" placeholder="Email">
-					<div id="feedback"></div>
-				</td>
+					<div id="feedback"></div>				</td>
 			</tr>
 			<tr>
 				<td>Password</td>
@@ -48,42 +48,75 @@
 				<td><input type="text" name="tanggal"></td>
 				<td>
 					<select name="bulan" id="">
-						<option value="0">- Bulan -</option>
-						<option value="01">Januari</option>
-						<option value="02">Februari</option>
-						<option value="03">Maret</option>
-						<option value="04">April</option>
-						<option value="05">Mei</option>
-						<option value="06">Juni</option>
-						<option value="07">Juli</option>
-						<option value="08">Agustus</option>
-						<option value="09">September</option>
-						<option value="10">Oktober</option>
-						<option value="11">November</option>
-						<option value="12">Desember</option>
-					</select>
-				</td>
+						<option value="">Januari</option>
+						<option value="">Februari</option>
+						<option>Maret</option>
+						<option>April</option>
+						<option>Mei</option>
+						<option>Juni</option>
+						<option>Juli</option>
+						<option>Agustus</option>
+						<option>September</option>
+						<option>Oktober</option>
+						<option>November</option>
+						<option>Desember</option>
+					</select>				</td>
 				<td>
 					<select name="tahun" id="">
-						<option value="0"> - Tahun - </option>
-						<?php
-							for ($i=1940; $i <= 2000 ; $i++) { 
-								echo "<option value='$i'>$i</option>";
-							}
-						?>
-					</select>
-				</td>
+					  <option value="">1940</option>
+					  <option>1941</option>
+					</select>				</td>
 			</tr>
 			<tr>
-				<td>Alamat</td>
-				<td><textarea name="alamat" id="" cols="30" rows="10"></textarea></td>
+				<td>Provinsi</td>
+				<td><label>
+				  <select name="provinsi" id="provinsi">
+				    <option value="Bali">Bali</option>
+		            </select>
+				</label></td>
 			</tr>
 			<tr>
-				<td><button type="submit" name="daftar">Daftar</button></td>
+				<td>Kabupaten</td>
+				<td><label>
+				  <input name="kabupaten" type="text" id="kabupaten">
+				</label></td>
 			</tr>
 			<tr>
-				<td>Sudah Punya Akun? <a href="login.php">Login</a></td>
+				<td>Kecamatan</td>
+				<td><label>
+				  <input name="kecamatan" type="text" id="kecamatan">
+				</label></td>
 			</tr>
+			<tr>
+			  <td>Kelurahan/Desa</td>
+			  <td><label>
+			    <input name="kelurahan" type="text" id="kelurahan">
+			  </label></td>
+		  </tr>
+			<tr>
+			  <td>Alamat Lengkap </td>
+			  <td><label>
+			    <input name="alamat" type="text" id="alamat">
+			  </label></td>
+		  </tr>
+			<tr>
+			  <td>Kode Pos </td>
+			  <td><label>
+			    <input name="kode_pos" type="text" id="kode_pos">
+			  </label></td>
+		  </tr>
+			<tr>
+			  <td>No. Telepon </td>
+			  <td><label>
+			    <input name="no_telp" type="text" id="no_telp">
+			  </label></td>
+		  </tr>
+			<tr>
+			  <td><button type="submit" name="daftar">Daftar</button></td>
+		  </tr>
+			<tr>
+			  <td>Sudah Punya Akun? <a href="login.php">Login</a></td>
+		  </tr>
 		</table>
 	</form>
 </body>
