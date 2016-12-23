@@ -12,11 +12,16 @@
 	$tahun = $_POST['tahun'];
 
 	$alamat = $_POST['alamat'];
+	$rt_rw = $_POST ['rt_rw'];
+	$kelurahan = $_POST['kelurahan'];
+	$kecamatan = $_POST['kecamatan'];
+	$kota = $_POST['kota'];
+	$kode_pos = $_POST['kode_pos'];
 
 	if (isset($_POST['daftar'])) {
-		$query = mysqli_query($conn, "INSERT INTO users (email,password,nama_lengkap,ttl,alamat) VALUES ('$email','$crypt','$nama','2016-03-03','$alamat')");
+		$query = mysqli_query($conn, "INSERT INTO users (email,password,nama_lengkap,ttl,alamat,rt_rw,kelurahan,kecamatan,kota,kode_pos) VALUES ('$email','$crypt','$nama','$tanggal','$alamat','$rt_rw','$kelurahan','$kecamatan','$kota','$kode_pos')");
 		if ($query) {
-			echo "berhasil daftar, habis ini kemana?";
+			echo "<script>alert('Data berhasil di Tambah, Silahkan Login'); window.location=('../login.php');</script>";
 		} else {
 			echo "gagal";
 		}
