@@ -11,14 +11,24 @@
 	$bulan = $_POST['bulan'];
 	$tahun = $_POST['tahun'];
 
-	$alamat = $_POST['alamat'];
+	if ($tanggal == '0' || $tahun == '0') {
+		echo "<script>alert('Tanggal atau tahun kosong.'); window.location=('../register.php') </script>";
+	} else {
+		$date = "$tahun-$bulan-$tanggal";
 
-	if (isset($_POST['daftar'])) {
-		$query = mysqli_query($conn, "INSERT INTO users (email,password,nama_lengkap,ttl,alamat) VALUES ('$email','$crypt','$nama','2016-03-03','$alamat')");
-		if ($query) {
-			echo "berhasil daftar, habis ini kemana?";
-		} else {
-			echo "gagal";
+		$alamat = $_POST['alamat'];
+
+		if (isset($_POST['daftar'])) {
+			if(empty($nama) || empty($email) || empty($_POST['password'])){
+				echo "<script>alert('Form tidak boleh kosong! Silakan ulangi lagi.'); window.location=('../register.php') </script>";
+			}elseif (isset($_POST['daftar'])) {
+				$query = mysqli_query($conn, "INSERT INTO users (email,password,nama_lengkap,ttl,alamat) VALUES ('$email','$crypt','$nama','$date','$alamat')");
+				if ($query) {
+					echo "berhasil daftar, habis ini kemana?";
+				} else {
+					echo "gagal";
+				}
+			}
 		}
 	}
 ?>

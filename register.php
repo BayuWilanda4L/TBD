@@ -8,8 +8,6 @@
 
 	<script>
 		$(document).ready(function(){
-			// $('#feedback').load('check/c_email.php').show();
-
 			$('#email').keyup(function() {
 				var email = $(this).val();
 				$.ajax({
@@ -50,14 +48,29 @@
 				<td><input type="text" name="tanggal"></td>
 				<td>
 					<select name="bulan" id="">
-						<option value="">Januari</option>
-						<option value="">Februari</option>
+						<option value="0">- Bulan -</option>
+						<option value="01">Januari</option>
+						<option value="02">Februari</option>
+						<option value="03">Maret</option>
+						<option value="04">April</option>
+						<option value="05">Mei</option>
+						<option value="06">Juni</option>
+						<option value="07">Juli</option>
+						<option value="08">Agustus</option>
+						<option value="09">September</option>
+						<option value="10">Oktober</option>
+						<option value="11">November</option>
+						<option value="12">Desember</option>
 					</select>
 				</td>
 				<td>
 					<select name="tahun" id="">
-						<option value=""> - Tahun - </option>
-						
+						<option value="0"> - Tahun - </option>
+						<?php
+							for ($i=1940; $i <= 2000 ; $i++) { 
+								echo "<option value='$i'>$i</option>";
+							}
+						?>
 					</select>
 				</td>
 			</tr>
