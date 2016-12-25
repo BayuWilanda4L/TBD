@@ -1,0 +1,146 @@
+<table>
+			<tr>
+				<td>Nama Lengkap</td>
+				<td>
+					<div class="form-group">
+						<input type="text" name="nama_lengkap" id="nama_lengkap" class="form-control" placeholder="Nama Lengkap">
+						<div id="feedback_nama"></div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>Email</td>
+				<td>
+					<div class="form-group">
+						<input type="text" name="email" id="email" class="form-control" placeholder="Email">
+					</div>
+				</td>
+				<td>
+					<div class="form-group" id="feedback"></div>
+				</td>
+			</tr>
+			<tr>
+				<td>Password</td>
+				<td>
+					<div class="form-group">
+						<input type="password" name="password1" id="password1" class="form-control" placeholder="Password">
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>Ketik Ulang Password</td>
+				<td>
+					<div class="form-group">
+						<input type="password" name="password2" id="password2" class="form-control" placeholder="Retype Password">
+					</div>
+					<div id="feedback_pass"></div>
+				</td>
+			</tr>
+			<tr>
+				<td>Tanggal Lahir</td>
+				<td>
+					<div class="form-group">
+						<input type="text" name="tanggal" class="form-control" max-size='2'>
+					</div>
+				</td>
+				<td>
+					<div class="form-group">
+					<select name="bulan" id="" class="form-control">
+						<option value="0">- Bulan -</option>
+						<option value="01">Januari</option>
+						<option value="02">Februari</option>
+						<option value="03">Maret</option>
+						<option value="04">April</option>
+						<option value="05">Mei</option>
+						<option value="06">Juni</option>
+						<option value="07">Juli</option>
+						<option value="08">Agustus</option>
+						<option value="09">September</option>
+						<option value="10">Oktober</option>
+						<option value="11">November</option>
+						<option value="12">Desember</option>
+					</select>
+					</div>
+				</td>
+				<td>
+					<div class="form-group">
+					<select name="tahun" id="" class="form-control">
+						<option value="0"> - Tahun - </option>
+						<?php
+							for ($i=1940; $i <= 2000 ; $i++) { 
+								echo "<option value='$i'>$i</option>";
+							}
+						?>
+					</select>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>Provinsi</td>
+				<td>
+					<div class="form-group">
+						<select name="provinsi" id="provinsi" class="form-control">
+							<option value="">- Provinsi -</option>
+						</select>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>Kabupaten</td>
+				<td>
+					<div class="form-group">
+					<input type="text" name="kabupaten" id="kabupaten" class="form-control">
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>Kecamatan</td>
+				<td>
+					<div class="form-group">
+					<input type="text" name="kecamatan" id="kecamatan" class="form-control">
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>Kelurahan/Desa</td>
+				<td>
+					<div class="form-group">
+					<input type="text" name="kelurahan" id="kelurahan" class="form-control">
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>Alamat</td>
+				<td>
+					<div class="form-group">
+					<textarea name="alamat" id="" cols="30" rows="10" class="form-control"></textarea>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>Kode Pos</td>
+				<td>
+					<div class="form-group">
+					<input type="text" name="kodepos" id="kodepos" class="form-control">
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>No. Telepon</td>
+				<td>
+					<div class="form-group">
+					<input type="text" name="notlp" id="notlp" class="form-control">
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="form-group">
+					<button type="submit" name="daftar" id="daftar" class="btn btn-primary">Daftar</button>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>Sudah Punya Akun? <a href="login.php">Login</a></td>
+			</tr>
+		</table>

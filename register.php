@@ -3,121 +3,157 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Halaman Registrasi</title>
-
+	
+	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<script src="js/jquery.js"></script>
-
-	<script>
-		$(document).ready(function(){
-			$('#feedback').load('check/c_email.php').show();
-
-			$('#email').keyup(function() {
-				var email = $(this).val();
-				$.ajax({
-					type: 'POST',
-					url: 'check/c_email.php',
-					data: 'email=' + email,
-					success: function(response) {
-						$('#feedback').html(response);
-					}
-				});
-			});
-		});
-	</script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/check.js"></script>
+	
+	
 </head>
 <body>
 	<h1>Registration Page</h1>
-	<form action="controller/proc_reg.php" method="POST">
-		<table>
-			<tr>
-				<td>Nama Lengkap</td>
-				<td>
-					<input type="text" name="nama_lengkap" id="nama_lengkap" placeholder="Nama Lengkap">				</td>
-			</tr>
-			<tr>
-				<td>Email</td>
-				<td>
-					<input type="text" name="email" id="email" placeholder="Email">
-					<div id="feedback"></div>				</td>
-			</tr>
-			<tr>
-				<td>Password</td>
-				<td><input type="password" name="password" placeholder="Password"></td>
-			</tr>
-			<tr>
-				<td>Tanggal Lahir</td>
-				<td><input type="text" name="tanggal"></td>
-				<td>
-					<select name="bulan" id="">
-						<option value="">Januari</option>
-						<option value="">Februari</option>
-						<option>Maret</option>
-						<option>April</option>
-						<option>Mei</option>
-						<option>Juni</option>
-						<option>Juli</option>
-						<option>Agustus</option>
-						<option>September</option>
-						<option>Oktober</option>
-						<option>November</option>
-						<option>Desember</option>
-					</select>				</td>
-				<td>
-					<select name="tahun" id="">
-					  <option value="">1940</option>
-					  <option>1941</option>
-					</select>				</td>
-			</tr>
-			<tr>
-				<td>Provinsi</td>
-				<td><label>
-				  <select name="provinsi" id="provinsi">
-				    <option value="Bali">Bali</option>
-		            </select>
-				</label></td>
-			</tr>
-			<tr>
-				<td>Kabupaten</td>
-				<td><label>
-				  <input name="kabupaten" type="text" id="kabupaten">
-				</label></td>
-			</tr>
-			<tr>
-				<td>Kecamatan</td>
-				<td><label>
-				  <input name="kecamatan" type="text" id="kecamatan">
-				</label></td>
-			</tr>
-			<tr>
-			  <td>Kelurahan/Desa</td>
-			  <td><label>
-			    <input name="kelurahan" type="text" id="kelurahan">
-			  </label></td>
-		  </tr>
-			<tr>
-			  <td>Alamat Lengkap </td>
-			  <td><label>
-			    <input name="alamat" type="text" id="alamat">
-			  </label></td>
-		  </tr>
-			<tr>
-			  <td>Kode Pos </td>
-			  <td><label>
-			    <input name="kode_pos" type="text" id="kode_pos">
-			  </label></td>
-		  </tr>
-			<tr>
-			  <td>No. Telepon </td>
-			  <td><label>
-			    <input name="no_telp" type="text" id="no_telp">
-			  </label></td>
-		  </tr>
-			<tr>
-			  <td><button type="submit" name="daftar">Daftar</button></td>
-		  </tr>
-			<tr>
-			  <td>Sudah Punya Akun? <a href="login.php">Login</a></td>
-		  </tr>
-		</table>
+	<form action="controller/proc_reg.php"method="POST" class="form-horizontal" id="form-registrasi">
+		<div class="form-group">
+	    	<label class="control-label col-sm-2">Nama Lengkap *</label>
+	    	<div class="col-sm-3">
+    	    	<input required type="text" class="form-control text-capitalize" id="nama_lengkap" name="nama_lengkap" placeholder="Nama Lengkap" >
+	    	</div>
+	    </div>
+
+		<div class="form-group">
+	    	<label class="control-label col-sm-2">Email *</label>
+	    	<div class="col-sm-3">
+	        	<input name="email" id="email" type="email" class="form-control" placeholder="Email" required>
+	    	</div>
+	  		
+	    </div>
+
+	    <div class="form-group">
+	    	<label class="control-label col-sm-2">Password *</label>
+	    	<div class="col-sm-3">
+	        	<input type="password" class="form-control" id="password1" name="password1" placeholder="Password" required>
+	    	</div>
+	    </div>
+
+	    <div class="form-group">
+	    	<label class="control-label col-sm-2">Retype Password *</label>
+	    	<div class="col-sm-3">
+	        	<input type="password" class="form-control" id="password2" name="password2" placeholder="Retype Password" required>
+	    	</div>
+	    </div>
+
+	    <div class="form-group">
+	    	<label class="control-label col-sm-2">Tanggal Lahir *</label>
+	    	<div class="col-sm-1">
+	        	<input type="text" class="form-control" id="tanggal" name="tanggal" placeholder="Tanggal" required>
+	    	</div>
+	    	<div class="col-sm-2">
+	        	<select name="bulan" id="bulan" class="form-control">
+	        		<option value="0">Bulan</option>
+	        		<option value="01">Januari</option>
+	        		<option value="02">Februari</option>
+	        		<option value="03">Maret</option>
+	        		<option value="04">April</option>
+	        		<option value="05">Mei</option>
+	        		<option value="06">Juni</option>
+	        		<option value="07">Juli</option>
+	        		<option value="08">Agustus</option>
+	        		<option value="09">September</option>
+	        		<option value="10">Oktober</option>
+	        		<option value="11">November</option>
+	        		<option value="12">Desember</option>
+	        	</select>
+	    	</div>
+	    	<div class="col-sm-2">
+	        	<select name="tahun" id="tahun" class="form-control">
+	        		<option value="0">Tahun</option>
+	        		<?php
+	        			for ($tahun=1940; $tahun <= 2000 ; $tahun++) { 
+	        				echo "<option value='$tahun'>$tahun</option>";
+	        			}
+	        		?>
+	        	</select>
+	    	</div>
+	    </div>
+
+	    <div class="form-group">
+	    	<label class="control-label col-sm-2">Provinsi *</label>
+	    	<div class="col-sm-2">
+	        	<select name="provinsi" id="provinsi" class="form-control">
+	        		<option value="0">Provinsi</option>
+	        		<option>Jawa Barat</option>
+	        	</select>
+	    	</div>
+	    </div>
+
+	    <div class="form-group">
+	    	<label class="control-label col-sm-2">Kabupaten/Kota *</label>
+	    	<div class="col-sm-3">
+	        	<input type="text" class="form-control text-capitalize" id="kabupaten" name="kabupaten" placeholder="Kabupaten" required>
+	    	</div>
+	    </div>
+		
+		<div class="form-group">
+	    	<label class="control-label col-sm-2">Kecamatan *</label>
+	    	<div class="col-sm-3">
+	        	<input type="text" class="form-control text-capitalize" id="kecamatan" name="kecamatan" placeholder="Kecamatan" required>
+	    	</div>
+	    </div>
+
+	    <div class="form-group">
+	    	<label class="control-label col-sm-2">Kelurahan/Desa *</label>
+	    	<div class="col-sm-3">
+	        	<input type="text" class="form-control text-capitalize" id="kelurahan" name="kelurahan" placeholder="Kelurahan/Desa" required>
+	    	</div>
+	    </div>
+
+	    <div class="form-group">
+	    	<label class="control-label col-sm-2">Alamat *</label>
+	    	<div class="col-sm-3">
+	        	<textarea class="form-control" id="alamat" name="alamat" rows="3" required></textarea>
+	    	</div>
+	    </div>
+
+		<div class="form-group">
+	    	<label class="control-label col-sm-2">Kode Pos *</label>
+	    	<div class="col-sm-3">
+	        	<input type="text" class="form-control" id="kodepos" name="kodepos" placeholder="Kode Pos" required>
+	    	</div>
+	    </div>	    
+
+	    <div class="form-group">
+	    	<label class="control-label col-sm-2">No. Telepon *</label>
+	    	<div class="col-sm-3">
+	        	<input type="text" class="form-control" id="no_tlp" name="no_tlp" placeholder="No. Telepon" required>
+	    	</div>
+	    </div>
+		<div class="form-group">
+	    	<label class="control-label col-sm-2"></label>
+	    	<div class="col-sm-4">
+	    		
+					<textarea class="form-control" rows="8" id="terms" readonly> lorem  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus quis suscipit soluta repellendus autem! Repellat facilis nam iure eligendi doloremque magni sint, rerum recusandae, harum modi pariatur deserunt repellendus atque.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste similique, obcaecati nemo. Architecto voluptas sequi impedit maxime facere placeat perferendis, quod, eveniet fuga perspiciatis, nostrum accusamus asperiores odio tenetur reiciendis.</textarea>
+				
+	    	</div>
+	    </div>
+	    <div class="form-group">
+	    	<label class="control-label col-sm-2"></label>
+	    	<div class="col-sm-4">
+	        	<label class="checkbox-inline"><input type="checkbox" id="setuju" required>Saya menyetujui syarat dan ketentuan yang berlaku</label>
+				<span id="pesan_check"></span>
+	    	</div>
+	    </div>
+	    <div class="form-group">
+		   	<div class="col-sm-3">
+			    <button type="submit" style="float:right" name="daftar" id="daftar" class="btn btn-primary">Daftar</button>
+		    </div>
+	    Sudah Punya Akun? <a href="login.php">Login</a>
+		</div>
+
 	</form>
+	<script>
+		$("#form-registrasi").validate();
+	</script>
+	
 </body>
 </html>
