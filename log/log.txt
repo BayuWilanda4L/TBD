@@ -5,7 +5,7 @@
 # Sudah membuat tabel users dalam db_tbd.
 # Atribut pada  table users baru; id(AI), email, password, nama_lengkap, ttl, alamat.
 # Pada form registrasi sudah bisa memasukan data ke database.
-# Pada tabel users dalam database db_tbd, tipe data masih varchar.
+# Pada tabel users dalam database db_tbd, tipe tanggal masih bertipe varchar.
 # Sudah bisa login dengan mencocokan data pada tabel users dan masuk ke main page.
 
 # Belum ada proses validasi terhadap form register
@@ -22,7 +22,7 @@
 #---------------------------
 # Restuktur dan penambahan atribut pada tabel users pada database db_tbd (provinsi, kabupaten/kota, kecamatan, kelurahan/desa, alamat lengkap, kode pos dan no telepon)
 # Penambahan field ( provinsi, kabupaten/kota, kecamatan, kelurahan/desa, alamat lengkap, kode pos dan no telepon) pada form registrasi
-# Update cara proses registrasi tergantung dari penambahan field di form registrasi.
+# Update cara proses registrasi yang isinya tergantung dari field-field di form registrasi.
 # Sudah menggunakan "mysqli_real_escape_string" pada proses registrasi dan login pada password untuk keamanan akun menghindari sql injection.
 
 #24 Desember 2016
