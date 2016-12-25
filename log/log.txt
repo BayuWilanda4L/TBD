@@ -32,4 +32,5 @@
 
 #25 Desember 2016
 -----------------------------
+# Menambahkan field "terms and conditions"
 # Keseluruhan validasi form registrasi sudah menggunakan jquery(javascript).
