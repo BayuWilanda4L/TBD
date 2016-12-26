@@ -214,12 +214,6 @@ $(document).ready(function(){
 		check_alamat();
 		check_kodepos();
 		check_no_tlp();
-
-<<<<<<< HEAD
-=======
-		check_terms();
-
->>>>>>> a8e6d7512bf4e6306a893a3611a123c949570ccf
 		if(error_nama == false && error_email == false && error_pass1 == false && error_pass2 == false && error_tanggal == false && error_kabupaten == false && error_kecamatan == false && error_kelurahan == false && error_alamat == false && error_kodepos == false && error_no_tlp == false) {
 			return true;
 		} else {
