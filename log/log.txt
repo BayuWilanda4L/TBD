@@ -1,0 +1,43 @@
+# 21 Desember 2016
+#--------------------------
+# Form login di welcome page, dan login page sudah dibuat pun form registrasi.
+# Sudah membuat database dengan nama db_tbd.
+# Sudah membuat tabel users dalam db_tbd.
+# Atribut pada  table users baru; id(AI), email, password, nama_lengkap, ttl, alamat.
+# Pada form registrasi sudah bisa memasukan data ke database.
+# Pada tabel users dalam database db_tbd, tipe tanggal masih bertipe varchar.
+# Sudah bisa login dengan mencocokan data pada tabel users dan masuk ke main page.
+
+# Belum ada proses validasi terhadap form register
+# Belum ada pengecekan field yang kosong di form register page, sehingga masih dapat melakukan input dengan kondisi form NULL
+# Password belum di-encrypt
+
+
+# 22 Desember 2016
+#---------------------------
+# Password telah di-encrypt menggunakan algortima SHA1 dengan mengkombinasikan email dan password yang diketik user.
+# Baru dapat mem-validasi email pada form registrasi, validasi berupa email yang sudah ada, ataupun email yang belum terdaftar, serta pengecekan symbol @ dan . (titik) pada input text.
+
+#23 Desember 2016
+#---------------------------
+# Restuktur dan penambahan atribut pada tabel users pada database db_tbd (provinsi, kabupaten/kota, kecamatan, kelurahan/desa, alamat lengkap, kode pos dan no telepon)
+# Penambahan field ( provinsi, kabupaten/kota, kecamatan, kelurahan/desa, alamat lengkap, kode pos dan no telepon) pada form registrasi
+# Update cara proses registrasi yang isinya tergantung dari field-field di form registrasi.
+# Sudah menggunakan "mysqli_real_escape_string" pada proses registrasi dan login pada password untuk keamanan akun menghindari sql injection.
+
+#24 Desember 2016
+#----------------------------
+# Cuma edit form pake bootstrap biar lebih keren hehehe
+# Mulai menggunakan jquery(javascript) untuk validasi field-field pada form registrasi namun masih sebagian PHP.
+
+#25 Desember 2016
+-----------------------------
+# Menambahkan field "terms and conditions"
+# Keseluruhan validasi form registrasi sudah menggunakan jquery(javascript).
+
+#26 Desember 2016
+#----------------------------
+# Pembatasan karakter yang diinput pada field tanggal menjadi maksimal 2 karakter dan sudah melakukan pencegahan user memasukan karakter dan simbol selain karakter 0-9.
+# Pembatasan karakter yang diinput pada field kode pos menjadi maksimal 5 karakter dan sudah melakukan pencegahan user memasukan karakter dan simbol selain karakter 0-9.
+# Pencegahan user memasukan karakter dan simbol selain karakter 0-9 pada field no. telepon.
+# Pencegahan user memasukan karakter dan simbol selain karakter a-z dan A-Z pada field Nama Lengkap.
