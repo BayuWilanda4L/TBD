@@ -1,11 +1,13 @@
-$(document).ready(function(){
+$(function(){
 
 	var error_nama = false;
 	var error_email = false;
 	var error_pass1 = false;
 	var error_pass2 = false;
 	var error_tanggal = false;
-
+	var error_bulan = false;
+	var error_tahun = false;
+	var error_provinsi = false;
 	var error_kabupaten = false;
 	var error_kecamatan = false;
 	var error_kelurahan = false;
@@ -13,21 +15,19 @@ $(document).ready(function(){
 	var error_kodepos = false;
 	var error_no_tlp = false;
 
-	var error_check = false;
-
 	$('#nama_lengkap').focusout(function() {
 		check_nama();
 	});
 
-	$('#email').keyup(function(){
+	$('#email').focusout(function(){
 		check_email();
 	});
 
-	$('#password1').keyup(function(){
+	$('#password1').focusout(function(){
 		check_pass1();
 	});
 
-	$('#password2').keyup(function(){
+	$('#password2').focusout(function(){
 		check_pass2();
 	});
 
@@ -35,6 +35,17 @@ $(document).ready(function(){
 		check_tanggal();
 	});
 
+	$('#bulan').focusout(function(){
+		check_bulan();
+	});
+
+	$('#tahun').focusout(function(){
+		check_tahun();
+	});
+
+	$('#provinsi').focusout(function(){
+		check_provinsi();
+	});
 
 	$('#kabupaten').focusout(function(){
 		check_kabupaten();
@@ -120,8 +131,6 @@ $(document).ready(function(){
 		}
 	}
 
-
-
 	function check_kabupaten() {
 		var kabupaten = $("#kabupaten").val();
 
@@ -159,7 +168,7 @@ $(document).ready(function(){
 		var alamat = $("#alamat").val();
 
 		if (alamat == "") {
-			$('#alamat').html("<style>#alamat {background-color:transparent;color:#a94442}</style>");
+			$('#alamat').html("<style>#alamat {background-color:#f2dede;color:#a94442}</style>");
 			error_alamat = true;
 		} else {
 			$('#alamat').html("<style>#alamat {background-color:#dff0d8;color:#3c763d}</style>");
@@ -188,13 +197,15 @@ $(document).ready(function(){
 		}
 	}
 
-	$("#form-registrasi").submit(function(){
+	$('#form-registrasi').submit(function(){
 		error_nama = false;
 		error_email = false;
 		error_pass1 = false;
 		error_pass2 = false;
 		error_tanggal = false;
-
+		error_bulan = false;
+		error_tahun = false;
+		error_provinsi = false;
 		error_kabupaten = false;
 		error_kecamatan = false;
 		error_kelurahan = false;
@@ -207,7 +218,9 @@ $(document).ready(function(){
 		check_pass1();
 		check_pass2();
 		check_tanggal();
-
+		check_bulan();
+		check_tahun();
+		check_provinsi();
 		check_kabupaten();
 		check_kecamatan();
 		check_kelurahan();
@@ -215,16 +228,12 @@ $(document).ready(function(){
 		check_kodepos();
 		check_no_tlp();
 
-<<<<<<< HEAD
-=======
-		check_terms();
-
->>>>>>> a8e6d7512bf4e6306a893a3611a123c949570ccf
-		if(error_nama == false && error_email == false && error_pass1 == false && error_pass2 == false && error_tanggal == false && error_kabupaten == false && error_kecamatan == false && error_kelurahan == false && error_alamat == false && error_kodepos == false && error_no_tlp == false) {
+		if(error_nama == false && error_email == false && error_pass1 == false && error_pass2 == false && error_tanggal == false && error_provinsi == false && error_kabupaten == false && error_kecamatan == false && error_kelurahan == false && error_alamat == false && error_kodepos == false && error_no_tlp == false) {
 			return true;
 		} else {
 			return false;
 		}
 	});
-	
 });
+
+// && error_tanggal == false && error_provinsi == false && error_kabupaten == false && error_kecamatan == false && error_kelurahan == false && error_alamat == false && error_kodepos == false && error_no_tlp == false

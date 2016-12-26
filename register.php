@@ -9,6 +9,7 @@
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/check.js"></script>
 	
+<<<<<<< HEAD
 	<script>
 		$(document).ready(function(){
 			$('#password1').tooltip();
@@ -29,6 +30,9 @@
 			input.value = input.value.replace(karakter, "");
 		}
 	</script>
+=======
+	
+>>>>>>> a8e6d7512bf4e6306a893a3611a123c949570ccf
 </head>
 <body>
 	<h1>Registration Page</h1>
@@ -36,7 +40,11 @@
 		<div class="form-group">
 	    	<label class="control-label col-sm-2">Nama Lengkap *</label>
 	    	<div class="col-sm-3">
+<<<<<<< HEAD
     	    	<input required type="text" onkeyup="lettersOnly(this) "class="form-control text-capitalize" id="nama_lengkap" name="nama_lengkap" placeholder="Nama Lengkap" >
+=======
+    	    	<input required type="text" class="form-control text-capitalize" id="nama_lengkap" name="nama_lengkap" placeholder="Nama Lengkap" >
+>>>>>>> a8e6d7512bf4e6306a893a3611a123c949570ccf
 	    	</div>
 	    </div>
 
@@ -51,7 +59,11 @@
 	    <div class="form-group">
 	    	<label class="control-label col-sm-2">Password *</label>
 	    	<div class="col-sm-3">
+<<<<<<< HEAD
 	        	<input type="password" class="form-control" id="password1" name="password1" placeholder="Password" required data-toggle='tooltip' title="Gunakan sekurang-kurangnya 8 karakter" data-placement="bottom">
+=======
+	        	<input type="password" class="form-control" id="password1" name="password1" placeholder="Password" required>
+>>>>>>> a8e6d7512bf4e6306a893a3611a123c949570ccf
 	    	</div>
 	    </div>
 
@@ -65,7 +77,11 @@
 	    <div class="form-group">
 	    	<label class="control-label col-sm-2">Tanggal Lahir *</label>
 	    	<div class="col-sm-1">
+<<<<<<< HEAD
 	        	<input type="text" onkeyup="numOnly(this)" class="form-control" id="tanggal" name="tanggal" maxlength="2" placeholder="Tanggal" required>
+=======
+	        	<input type="text" class="form-control" id="tanggal" name="tanggal" placeholder="Tanggal" required>
+>>>>>>> a8e6d7512bf4e6306a893a3611a123c949570ccf
 	    	</div>
 	    	<div class="col-sm-2">
 	        	<select name="bulan" id="bulan" class="form-control">
@@ -137,14 +153,22 @@
 		<div class="form-group">
 	    	<label class="control-label col-sm-2">Kode Pos *</label>
 	    	<div class="col-sm-3">
+<<<<<<< HEAD
 	        	<input type="text" maxlength="5" onkeyup="numOnly(this)" class="form-control" id="kodepos" name="kodepos" placeholder="Kode Pos" required>
+=======
+	        	<input type="text" class="form-control" id="kodepos" name="kodepos" placeholder="Kode Pos" required>
+>>>>>>> a8e6d7512bf4e6306a893a3611a123c949570ccf
 	    	</div>
 	    </div>	    
 
 	    <div class="form-group">
 	    	<label class="control-label col-sm-2">No. Telepon *</label>
 	    	<div class="col-sm-3">
+<<<<<<< HEAD
 	        	<input type="text" onkeyup="numOnly(this)" class="form-control" id="no_tlp" name="no_tlp" placeholder="No. Telepon" required>
+=======
+	        	<input type="text" class="form-control" id="no_tlp" name="no_tlp" placeholder="No. Telepon" required>
+>>>>>>> a8e6d7512bf4e6306a893a3611a123c949570ccf
 	    	</div>
 	    </div>
 		<div class="form-group">
