@@ -1,18 +1,18 @@
 <?php 
+	session_start();
 	include "../config/config.php";
 
-	session_start();
-
 	$email = $_POST['email'];
-	$pass = mysqli_real_escape_string($_POST['password']);
+	$pass = $_POST['password'];
+	$salt = "Decrypt.aja.kalo_bisa!";
 
-	$crypt = sha1(sha1($email).sha1($pass));
+	$crypt = sha1(sha1($email).sha1($pass).$salt);
 
-	$query = mysqli_query($conn, "SELECT * FROM users WHERE email='$email' and password='$crypt'");
-	if ($var=mysqli_fetch_array($query)) {
+	$query=mysqli_query($conn, "SELECT * FROM users where email='$email' and password='$crypt'");
+	if($var = mysqli_fetch_array($query)){ 
 		$_SESSION['email']=$email;
 		header("location:../sukses.php");
-	} else {
+	}else{
 		header("location:../login.php");
 	}
 ?>
