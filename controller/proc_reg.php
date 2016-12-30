@@ -4,9 +4,10 @@
 	$nama = $_POST['nama_lengkap'];	
 
 	$email = $_POST['email'];
-	$pass = mysqli_real_escape_string($_POST['password2']);
+	$pass = $_POST['password2'];
+	$salt = "Decrypt.aja.kalo_bisa!";
 
-	$crypt = sha1(sha1($email).sha1($pass));
+	$crypt = sha1(sha1($email).sha1($pass).$salt);
 
 	$tanggal = $_POST['tanggal'];
 	$bulan = $_POST['bulan'];
