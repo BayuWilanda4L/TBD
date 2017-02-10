@@ -47,6 +47,8 @@
 #----------------------------
 # Mulai membuat tampilan login menggunakan css.
 # Membuat halaman error 404 (not found).
+# Memasukan folder css, img, dan js ke folder assets
+# membuat file index.php pada folder assets, controller dan config dan mengarahkannya ke file 404.html
 
 #27 Januari 2017
 #----------------------------
