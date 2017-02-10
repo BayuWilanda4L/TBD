@@ -1,0 +1,7 @@
+RewriteEngine On
+
+RewriteRule ^register?$ register.php
+RewriteRule ^login?$ login.php
+RewriteRule ^404?$ 404.html
+RewriteRule ^logout?$ controller/proc_logout.php
+RewriteRule ^regist?$ controller/proc_reg.php
