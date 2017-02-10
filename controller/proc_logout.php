@@ -1,6 +1,6 @@
 <?php 	
 	session_start();
 
-	unset($_SESSION['email']);
+	unset($_SESSION['no_id']);
 	header("location:../login.php");
 ?>

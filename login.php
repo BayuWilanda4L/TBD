@@ -2,35 +2,51 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<script src="js/jquery.js"></script>
-	<script src="js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/login_style.css">
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+	<script src="assets/js/jquery.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
 	<title>Login Page</title>
 </head>
 <body>
-	<h1>Login Page</h1>
-	<form action="controller/proc_login.php" method="POST" class="form-horizontal">
-		<div class="form-group">
-	    	<label class="control-label col-sm-1">Email</label>
-	    	<div class="col-sm-3">
-    	    	<input type="text" class="form-control" id="email" name="email" placeholder="Email">
-	    	</div>
-	    </div>
-
-	    <div class="form-group">
-	    	<label class="control-label col-sm-1">Password</label>
-	    	<div class="col-sm-3">
-    	    	<input type="password" class="form-control" id="password" name="password" placeholder="Password">
-	    	</div>
-	    </div>
-		
-		<div class="form-group">
-		   	<div class="col-sm-1">
-			    <button type="submit" id="login" class="btn btn-primary">Login</button>
-		    </div>
-	    Belum Punya Akun? <a href="register.php">Daftar</a>
+	<div class="login">
+		<div class="sealinked-logo">
+			<p>sealinked.co.id</p>
 		</div>
 
-	</form>
+		<form action="controller/proc_login.php" method="POST" class="form-horizontal">
+			<div class="form-group">
+		    	<div class="input-group col-md-9 login-centered">
+		    		<div class="input-group-addon form"><i class="fa fa-id-card"></i></div>
+		    		<input type="text" class="form-control form" id="id" name="id" placeholder="No. ID">
+		    	</div>
+		    </div>
+
+		    <div class="form-group">
+		    	<div class="input-group col-md-9 login-centered">
+		    		<div class="input-group-addon form"><i class="fa fa-unlock fa-lg"></i></div>
+		    		<input type="password" class="form-control form" id="password" name="password" placeholder="Password">
+		    	</div>
+		    </div>
+
+			<div class="form-group">
+			   	<div class="col-md-10 login-centered">
+				    <button type="submit" id="login" class="btn btn-primary col-md-12 login-centered">Login</button>
+			    </div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-md-2 reg">
+					<a href="register">Register</a>
+				</div>
+
+				<div class="col-md-5 pull-right lost">
+					<a href="#">Lost your password?</a>
+				</div>
+			</div>
+		</form>
+	</div>
 </body>
 </html>

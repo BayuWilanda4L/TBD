@@ -31,10 +31,9 @@
 # Mulai menggunakan jquery(javascript) untuk validasi field-field pada form registrasi namun masih sebagian PHP.
 
 #25 Desember 2016
------------------------------
+#-----------------------------
 # Menambahkan field "terms and conditions"
 # Keseluruhan validasi form registrasi sudah menggunakan jquery(javascript).
-<<<<<<< HEAD
 
 #26 Desember 2016
 #----------------------------
@@ -43,4 +42,25 @@
 # Pencegahan user memasukan karakter dan simbol selain karakter 0-9 pada field no. telepon.
 # Pencegahan user memasukan karakter dan simbol selain karakter a-z dan A-Z pada field Nama Lengkap.
 =======
->>>>>>> a8e6d7512bf4e6306a893a3611a123c949570ccf
+
+#26 Januari 2017
+#----------------------------
+# Mulai membuat tampilan login menggunakan css.
+# Membuat halaman error 404 (not found).
+
+#27 Januari 2017
+#----------------------------
+# Menghapus folder check yang berisi file validasi (php) diganti menggunakan javascript.
+
+#30 Januari 2017
+#----------------------------
+#Perubahan desain database.
+
+#10 Februari 2017
+#----------------------------
+# Pembuatan dan penggunaan .htaccess untuk membuat url lebih bersih dan SEO friendly.
+# Url yang diubah :
+# 1. register.php menjadi register.
+# 2. login.php menjadi login.
+# 3. 404.html menjadi 404.
+

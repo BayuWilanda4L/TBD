@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<script src="js/jquery.js"></script>
-	<script src="js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<script src="assets/js/jquery.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
 	<title>Welcome Page</title>
 </head>
 <body>
@@ -23,12 +23,12 @@
     	    	<input type="password" class="form-control" id="password" name="password" placeholder="Password">
 	    	</div>
 	    </div>
-		
+
 		<div class="form-group">
 		   	<div class="col-sm-1">
 			    <button type="submit" id="login" class="btn btn-primary">Login</button>
 		    </div>
-	    Belum Punya Akun? <a href="register.php">Daftar</a>
+	    Belum Punya Akun? <a href="register">Daftar</a>
 		</div>
 
 	</form>

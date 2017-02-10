@@ -7,30 +7,52 @@
 	$pass = $_POST['password2'];
 	$salt = "Decrypt.aja.kalo_bisa!";
 
-	$crypt = sha1(sha1($email).sha1($pass).$salt);
-
 	$tanggal = $_POST['tanggal'];
 	$bulan = $_POST['bulan'];
 	$tahun = $_POST['tahun'];
 	$provinsi = $_POST['provinsi'];
-	$kabupaten = $_POST['kabupaten'];
+	$kab_kot = $_POST['kabupaten'];
 	$kecamatan = $_POST['kecamatan'];
 	$kelurahan = $_POST['kelurahan'];
 	$alamat = $_POST['alamat'];
 	$kode_pos = $_POST['kodepos'];
 	$no_telp = $_POST['no_tlp'];
+	$username = $email;
+	$ttl = "$tahun-$tanggal-$bulan";
+
+	$jml_user=mysqli_query($conn, "SELECT * FROM user");
+	$total = mysqli_num_rows($jml_user);
+
+	$now = date("Y");
+	$noreg = $total++;
+	$no_id = "$now-$provinsi-$total";
+
+	$pass_crypt = sha1(sha1($no_id).sha1($pass).$salt);
 
 	if ($tanggal == '0' || $tahun == '0' || $provinsi == '0') {
 		echo "<script>alert('Masih ada form kosong.'); window.location=('../register.php') </script>";
 	} else {
-		$date = "$tahun-$bulan-$tanggal";
+		$prov = mysqli_query($conn, "SELECT * FROM 'db_sealinked.provinsi' WHERE no_id='$provinsi'");
+		$var = mysqli_fetch_array($prov);
 
-		if (isset($_POST['daftar'])) {
-			$query = mysqli_query($conn, "INSERT INTO users (email,password,nama_lengkap,ttl,provinsi,kabupaten,kecamatan,kelurahan,alamat_lengkap,kode_pos,no_telp) VALUES ('$email','$crypt','$nama','$date','$provinsi','$kabupaten','$kecamatan','$kelurahan','$alamat','$kode_pos','$no_telp')");
-			if ($query) {
-				echo "<script>alert('Berhasil mendaftar.'); window.location=('../login.php') </script>";
-			} else {
-				echo "gagal";
+		
+		$sql_1 = "INSERT INTO db_sealinked.user values ('$no_id','$username')";
+		$sql_2 = "INSERT INTO db_sealinked.login_user values ('$no_id','$pass_crypt')";
+		$sql_3 = "INSERT INTO db_sealinked.alamat values ('$no_id','$var[prov]','$kab_kot','$alamat','$kode_pos')";
+		$sql_4 = "INSERT INTO db_sealinked.profil_user values ('$no_id','$nama','$email','$ttl','00','$no_telp')";
+		
+
+		$query = mysqli_query($conn, $sql_1);
+		if ($query == true) {
+			$query = mysqli_query($conn, $sql_2);
+			if ($query == true) {
+				$query = mysqli_query($conn, $sql_3);
+				if ($query == true) {
+					$query = mysqli_query($conn, $sql_4);
+					if ($query == true) {
+						echo "<script>alert('Berhasil mendaftar. NO ID: $no_id'); window.location=('../login.php') </script>";
+					}
+				}
 			}
 		}
 	}
