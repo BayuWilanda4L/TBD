@@ -20,7 +20,7 @@
 			<div class="form-group">
 		    	<div class="input-group col-md-9 login-centered">
 		    		<div class="input-group-addon form"><i class="fa fa-id-card"></i></div>
-		    		<input type="text" class="form-control form" id="id" name="id" placeholder="No. ID">
+		    		<input type="email" class="form-control form" id="email" name="email" placeholder="Email">
 		    	</div>
 		    </div>
 

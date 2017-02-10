@@ -6,29 +6,8 @@
 	<title>Halaman Registrasi</title>
 
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-	<script src="assets/js/jquery.js"></script>
-	<script src="assets/js/bootstrap.min.js"></script>
-	<script src="assets/js/check.js"></script>
-	<script src="assets/js/moment.min.js"></script>
-	<script src="assets/js/bootstrap-datetimepicker.min.js"></script>
-
-	<script type="text/javascript">
-	 $(function () {
-	  $('#datetimepicker').datetimepicker({
-	   format: 'DD MMMM YYYY HH:mm',
-	  });
-	  
-	  $('#datepicker').datetimepicker({
-	   format: 'DD MMMM YYYY',
-	  });
-	  
-	  $('#timepicker').datetimepicker({
-	   format: 'HH:mm'
-	  });
-	 });
-	</script>
+	
 	<script>
-
 		$("#form-registrasi").validate();
 
 		$(document).ready(function(){
@@ -50,7 +29,7 @@
 </head>
 <body>
 	<h1>Registration Page</h1>
-	<form action="controller/proc_reg.php"method="POST" class="form-horizontal" id="form-registrasi">
+	<form action="regist"method="POST" class="form-horizontal" id="form-registrasi">
 		<div class="form-group">
 	    	<label class="control-label col-sm-2">Nama Lengkap *</label>
 	    	<div class="col-sm-3">
@@ -84,44 +63,9 @@
 	    <div class="form-group">
 	    	<label class="control-label col-sm-2">Tanggal Lahir *</label>
 	    	
-	    	<!-- <div class="form-group">
-			 <div class='input-group date' id='datepicker'>
-			  <input type='text' class="form-control" />
-			  <span class="input-group-addon">
-			   <span class="glyphicon glyphicon-calendar"></span>
-			  </span>
-			 </div>
-			</div> -->
-	    	<!-- <div class="col-sm-1">
-	        	<input type="text" onkeyup="numOnly(this)" class="form-control" id="tanggal" name="tanggal" maxlength="2" placeholder="Tanggal" required>
+	    	<div class="col-sm-3 cold-md-3">
+                <input type="date" class="form-control" id="ttl" name="ttl" placeholder="Tanggal Lahir" required>
 	    	</div>
-	    	<div class="col-sm-2">
-	        	<select name="bulan" id="bulan" class="form-control">
-	        		<option value="0">Bulan</option>
-	        		<option value="01">Januari</option>
-	        		<option value="02">Februari</option>
-	        		<option value="03">Maret</option>
-	        		<option value="04">April</option>
-	        		<option value="05">Mei</option>
-	        		<option value="06">Juni</option>
-	        		<option value="07">Juli</option>
-	        		<option value="08">Agustus</option>
-	        		<option value="09">September</option>
-	        		<option value="10">Oktober</option>
-	        		<option value="11">November</option>
-	        		<option value="12">Desember</option>
-	        	</select>
-	    	</div>
-	    	<div class="col-sm-2">
-	        	<select name="tahun" id="tahun" class="form-control">
-	        		<option value="0">Tahun</option>
-	        		<?php
-	        			for ($tahun=1940; $tahun <= 2000 ; $tahun++) {
-	        				echo "<option value='$tahun'>$tahun</option>";
-	        			}
-	        		?>
-	        	</select>
-	    	</div> -->
 	    </div>
 
 	    <div class="form-group">
@@ -204,6 +148,10 @@
 		</div>
 
 	</form>
-
+	<script src="assets/js/jquery.js"></script>
+	<script src="assets/js/jquery-1.8.3.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/check.js"></script>
+	<script src="assets/js/bootstrap-datetimepicker.js"></script>
 </body>
 </html>

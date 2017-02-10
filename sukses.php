@@ -3,10 +3,10 @@
 <?php 
 	include "config/config.php";
 	session_start();
- 	if(empty($_SESSION['no_id'])){
+ 	if(empty($_SESSION['email'])){
  		header("location:login.php");
 	}
-	$query = mysqli_query($conn, "SELECT * FROM db_sealinked.profil_user where no_id='$_SESSION[no_id]'");
+	$query = mysqli_query($conn, "SELECT * FROM profil_user where email='$_SESSION[email]'");
 	$var = mysqli_fetch_array($query);
 ?>
 <head>
@@ -18,6 +18,6 @@
 	<h1>Main Page</h1>
 
 	<p>Selamat datang, <?php echo "$var[email]" ?></p>
-	<p><a href="controller/proc_logout.php">Logout</a></p>
+	<p><a href="logout">Logout</a></p>
 </body>
 </html>

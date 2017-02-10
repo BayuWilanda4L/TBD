@@ -4,5 +4,4 @@
 	if (!$conn) {
 		echo "Error : Unable to connect to MySQL";
 	}
-// $base = "sealinked";
 ?>
